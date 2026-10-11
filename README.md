@@ -30,14 +30,17 @@ Los endianes de los punteros es según como los tenga el binario.
 Puedes obtener esta información usando programas como *IDA Pro o Ghidra*.
 
 *Ejemplo de 2 líneas:*
+```
 0001A4B0	22	00FF1234	String_1
 0001A4D0	18	00FF1280	String_2
+```
 
 2. Preparar la tabla de caracteres (Opcional-Requiere editar la fuente por aparte)
 
 Crea un archivo `.txt` para el remapeo. 
 
 *Ejemplo:*
+```
 
 á=#
 é=+
@@ -45,6 +48,7 @@ Crea un archivo `.txt` para el remapeo.
 ó=*
 ú=/
 
+```
 3. Flujo de trabajo en el programa
 
 1.  Abre el Binario con el botón *"Abrir archivo"*. El programa cargará automáticamente el `.txt` si está en la misma carpeta.
