@@ -31,8 +31,8 @@ Puedes obtener esta información usando programas como *IDA Pro o Ghidra*.
 
 *Ejemplo de 2 líneas:*
 ```
-0001A4B0	22	00FF1234	String_1
-0001A4D0	18	00FF1280	String_2
+0001A4B0	8	00FF1234	String_1
+0001A4D0	8	00FF1280	String_2
 ```
 
 2. Preparar la tabla de caracteres (Opcional-Requiere editar la fuente por aparte)
