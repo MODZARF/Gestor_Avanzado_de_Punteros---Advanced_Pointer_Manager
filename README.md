@@ -23,7 +23,9 @@ Este es un proyecto *Open Source* desarrollado con asistencia de IA *(Gemini de 
 
 Necesitas un archivo `.txt` con el *mismo nombre que el binario* (ej: si tu binario es `game.exe`, el txt debe ser `game.txt`).
 
-Cada línea debe contener, separada por una *tabulación (sangría)*:
+Cada línea debe contener estos datos y estar separada por una *tabulación (sangría)*:
+
+
 `offset_del_string` | `longitud_en_decimal` | `puntero(s)_hex_LE_o_BE` | `string`
 
 Los endianes de los punteros es según como los tenga el binario.
