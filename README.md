@@ -16,6 +16,7 @@ Este es un proyecto *Open Source* desarrollado con asistencia de IA *(Gemini de 
 ⚠️ Limitaciones
 
 > *IMPORTANTE:* Esta herramienta *NO recalcula ni crea punteros nuevos*. Solo trabaja con los punteros ya existentes dentro del Binario. Es una herramienta de reasignación, no de inyección.
+> No funciona con strings con codificación UTF-16
 
 🚀 Cómo Usar
 
@@ -68,6 +69,51 @@ Crea un archivo `.txt` para el remapeo.
 🐛 Bugs Conocidos
 
 Al cambiar más de dos punteros hacia un mismo string y tratar de restaurar, el programa se confunde y la información se pierde en el JSON, provocando que no se puedan restaurar todos los punteros correctamente.
+
+
+
+## Cambios de la versión 4.4
+
+Mejoras enfocadas en el flujo de trabajo para que editar punteros y strings sea más rápido, más claro y con menos pasos.
+
+### ✏️ Edición de punteros y strings separada
+
+- 🔘 El botón **APLICAR CAMBIOS** se cambió por **CAMBIAR PTR**. Esto separa por completo la edición de punteros de la edición de strings, para que no se confundan las dos acciones.
+
+### 📝 Edición de strings más simple
+
+- ✅ Ya **no es necesario sincronizar la misma línea en ambas secciones** para editar un string. Ahora solo seleccionas la línea en la **Sección 2** y lo editas con el botón **EDITAR STRING**.
+- ✅ Ahora tiene soporte para caracteres Latinos.
+- 🔁 Si editas un string, **ya no es necesario revertir el string original** para volver a editarlo. Puedes editarlo de nuevo directamente.
+- 👉 Se implementó el botón **Expandir** para editar los strings en un cuadro de texto mas grande con soporte para saltos de línea.
+- 🧩 Se implementó la **escritura sobre padding**, que permite aprovechar los bytes de relleno al final de un string y así sumar longitud. ⚠️ **Úsalo con cuidado:** esta opción puede generar conflictos en algunos binarios.
+
+### 📂 Cerrar archivos abiertos
+
+- ❌ Ahora se permite **cerrar un binario o una tabla abierta** sin tener que cerrar el programa.
+
+### 🛠️ Nuevo botón HERRAMIENTAS
+
+Se implementó el botón **HERRAMIENTAS**, que permite ejecutar:
+
+#### 1. Programa para crear / editar tablas
+
+- 🔤 Sirve para crear tablas o editar tablas para **remapeo de caracteres**.
+- ⌨️ Forma de uso: pon los pares de caracteres en la barra de **"Ingrese caracteres seguidos"** y automáticamente se organiza la información.
+
+#### 2. Programa para generar el txt descriptor
+
+- 📄 Sirve para generar el **txt descriptor**.
+
+**Modo IDA:**
+- ☑️ Selecciona el checkbox **IDA** para cargar un txt con la información de strings del desensamblador **IDA**, usando el botón **Seleccionar**.
+- 📐 Especifica el valor para el **offset relativo**. 💡 *Truco para obtener ese valor: resta un puntero con un offset.*
+
+**Modo Manual:**
+- ☑️ Selecciona el checkbox **Manual**.
+- 📐 Usando un **offset de inicio** y un **offset final**, más un valor para calcular los punteros, puedes extraer bloques de cadenas de cualquier **Binario**, que también se selecciona con el botón **Seleccionar** (sólo funciona con strings en utf-8).
+
+
 
 🙏 Créditos y Agradecimientos
 
