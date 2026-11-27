@@ -367,7 +367,7 @@ class BinaryEditorApp:
         tab_tabla = ttk.Frame(notebook, padding="6")
         notebook.add(tab_tabla, text=" Tabla ")
 
-        ttk.Label(tab_tabla, text="Ingrese caracteres seguidos (ej. ty):", font=('Segoe UI', 9, 'bold')).pack(anchor=tk.W, pady=2)
+        ttk.Label(tab_tabla, text="Ingrese caracteres seguidos (ej. á+):", font=('Segoe UI', 9, 'bold')).pack(anchor=tk.W, pady=2)
         
         pair_entry_var = tk.StringVar()
         entry_pair = ttk.Entry(tab_tabla, textvariable=pair_entry_var, font=('Consolas', 10))
